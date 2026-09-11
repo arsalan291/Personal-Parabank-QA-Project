@@ -1,0 +1,23 @@
+Bug-PB-01
+
+Title: Bill pay allow negative numeric values leading to balance increment
+
+Severity: P1 (Critical)
+
+Step to Reproduce
+
+1.Log into Parabank with valid credential.
+2.And Navigate to Bill Pay section  Via the Left navigation menu
+3.Fill all mandatory information
+4. In the amount Field, Enter -$250
+5.Select account 1234  as the payment source and Click Send Payment
+
+Expected Result
+
+The System should validate the input and block the submission. and display an error message: "stating that transaction amount must be greater than zero"
+
+
+Actual Result:
+
+System processes the payment successfully and shows message "Bill Payment Complete".
+Balance is increased from $1000 to $1250 instead of being debited or rejected
